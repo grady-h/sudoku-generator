@@ -60,3 +60,18 @@ class SudokuSolver:
                     return False
         return True
     
+    def print_board(self, board):
+        disp = ""
+        for i in range(9):
+            for j in range(9):
+                entry = board[i][j]
+                if entry == 0:
+                    entry = " "
+                if j == 2 or j == 5:
+                    disp += f"{entry} | "
+                else:
+                    disp += f"{entry}   "
+            disp += "\n"
+            if i == 2 or i == 5:
+                disp += "- - - - - - - - - - - - - - - - -\n"
+        print(disp)
